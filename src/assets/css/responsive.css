@@ -1,0 +1,19 @@
+@media (min-width: 200px) and (max-width: 1000px) {
+    .hero .left h1 {
+        font-family: "GothamRnd-Medium", sans-serif;
+        font-size: 37px;
+        padding: 10px;
+    }
+    .hero .left {
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+    }
+    .hero .right {
+        display: none;
+    }
+}
