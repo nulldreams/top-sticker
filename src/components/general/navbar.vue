@@ -1,50 +1,188 @@
 <template>
-    <header ng-controller="PrincipalCtrl">
-        <h2>
-            <a href="/" class="logo"><p class="swing">Top Stickers</p></a>
-        </h2>
+    <div id="nav-background">
+      <div id="nav-container">
+        <header id="nav-header">
+          <h1><a href="/" id="nav-logo">Top Sticker</a></h1>
+          <div id="nav-menu-button">MENU</div>
+        </header>
         <nav>
-            <li>
-                <a href="/filmes" class="filmes"><p class="swing">Cultura Nerd</p></a>
-            </li>
-            <li>
-                <a href="/animes" class="animes"><p class="swing">Devs</p></a>
-            </li>
+          <ul class="nav-ul hide-ul">
+            <li><a class="nav-link" href="#">Cultura Nerd</a></li>
+            <li><a class="nav-link" href="#">Devs</a></li>
+          </ul>
         </nav>
-    </header>
+      </div>
+    </div>
 </template>
 
+<script>
+export default {
+  mounted: function () {
+    var navButton = this.$el.querySelector('#nav-menu-button')
+    var navUl = this.$el.querySelector('.nav-ul')
+    console.log(navUl)
+
+    function toggleMobileMenu () {
+      navUl.classList.toggle('hide-ul')
+    }
+
+    navButton.onclick = toggleMobileMenu
+  }
+}
+</script>
+
 <style>
-header {
-  position: absolute;
+#nav-container > nav > ul {
+  list-style-type: none;
+}
+
+/* NAVIGATION */
+#nav-background {
+  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 10;
+  z-index: 9000;
   width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  /*
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  */
+}
+
+#nav-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
-  color: #fff;
-  padding: 20px 150px 20px;
 }
 
-header h2 {
-  font-family: "GothamRnd-Book", sans-serif;
+#nav-logo {
+  color: tomato;
+  text-decoration: none;
+}
+#nav-logo:hover {
+  color: #666;
 }
 
-header nav {
+.nav-ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 700px;
+}
+
+.nav-ul > li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
-header nav li {
-  margin: 0 15px;
+.nav-link {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: tomato;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
-header nav li:first-child {
-  margin-left: 0;
+.nav-link:hover {
+  background-color: #f1f1f1;
 }
 
-header nav li:last-child {
-  margin-right: 0;
+.active-link {
+  background-color: #f1f1f1;
+}
+
+/* END NAVIGATION */
+
+/* MOBILE MENU */
+@media screen and (max-width: 700px) {
+  #nav-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #nav-menu-button {
+    color: tomato;
+    font-family: 'GothamRnd-Medium', sans-serif;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .nav-ul {
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow-y: scroll;
+    direction: rtl;
+    transition: max-height 400ms;
+    max-height: 80vh;
+  }
+
+  .hide-ul {
+    max-height: 0vh;
+  }
+
+  .nav-link {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #f4f4f4;
+  }
+}
+/* END MOBILE MENU */
+
+/* DESKTOP MENU */
+@media screen and (min-width: 701px) {
+  #nav-menu-button {
+    display: none;
+  }
+
+  .nav-link {
+    flex-basis: auto;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* This moves the logo so that it's not touching the left side */
+@media screen and (max-width: 1040px) {
+  #nav-logo {
+    margin-left: 1rem;
+  }
 }
 </style>

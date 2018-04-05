@@ -13,4 +13,5 @@ export default {
 <style>
 @import './assets/css/style.css';
 @import './assets/css/responsive.css';
+@import './assets/css/utils.css';
 </style>

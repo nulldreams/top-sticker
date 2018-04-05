@@ -1,19 +1,26 @@
-@media (min-width: 200px) and (max-width: 1000px) {
+@media (max-width: 1000px) {
     .hero .left h1 {
         font-family: "GothamRnd-Medium", sans-serif;
-        font-size: 37px;
-        padding: 10px;
+        font-size: 37px !important;
+        padding: 10px !important;
     }
     .hero .left {
         margin-top: auto;
         margin-bottom: auto;
         margin-right: auto;
-        margin-left: auto;
-        width: 100%;
+        margin-left: auto !important;
+        width: 100% !important;
         color: #fff;
         text-align: center;
     }
     .hero .right {
         display: none;
     }
+    .generos {
+      padding: 50px 50px 50px;
+    }
+    .generos .grid li.small,
+    .generos .grid li.large {
+      flex-basis: 100%;
+    }    
 }

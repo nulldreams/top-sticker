@@ -34,7 +34,15 @@ a {
   text-decoration: none !important;
   color: inherit;
   cursor: pointer;
-  font-family: "GothamRnd-Book", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'GothamRnd-Medium', sans-serif;
+  color: #555;
+}
+
+p, a {
+  font-family: 'GothamRnd-Book', sans-serif;
 }
 
 ul,

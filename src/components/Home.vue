@@ -3,7 +3,7 @@
     <navbar/>
     <section class="hero">
       <div class="left animate-left">
-        <h1>Os stickers mais toppers da internet!</h1>
+        <h1 class="text-white">Os stickers mais toppers da internet!</h1>
         <p class="animate-left">E mais baratos!</p>
         <div class="botoes animate-left-slow-2">
           <a href="#" v-scroll-to="'#generos'" class="btn-header">Conheça</a>
@@ -14,12 +14,16 @@
       </div>
     </section>
 
-    <section class="generos" id="generos">
+    <section class="generos text-center" id="generos">
+      <h3 class="title">Nossos stickers</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+      <hr>
+
       <ul class="grid">
-        <li class="small animate-left" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/coast.jpg);"></li>
-        <li class="large animate-right" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/island.jpg);"></li>
-        <li class="large animate-left" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/balloon.jpg);"></li>
-        <li class="small animate-right" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/mountain.jpg);"></li>
+        <li class="small" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/coast.jpg);"></li>
+        <li class="large" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/island.jpg);"></li>
+        <li class="large" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/balloon.jpg);"></li>
+        <li class="small" style="background-image: url(https://demo.tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/assets/img/mountain.jpg);"></li>
       </ul>
     </section>
 
@@ -146,5 +150,15 @@ export default {
   width: 200px;
   outline:0 !important;
   cursor: pointer;
+}
+
+.generos h3 {
+  font-size: 25px;
+  padding: 10px;
+  color: #777;
+}
+
+.generos p {
+  color: #999;
 }
 </style>

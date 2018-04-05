@@ -1,0 +1,17 @@
+.text-center {
+  text-align: center !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+hr{
+	width: 150px;
+	height: 2px;
+	background-color: #2196F3;
+	border: 0;
+  margin: 0 auto;
+	margin-top: 30px;
+  margin-bottom: 30px;
+}
